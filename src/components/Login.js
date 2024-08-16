@@ -9,6 +9,7 @@ import {
 import { auth } from "../utils/firebase.js";
 import { addUser } from "../utils/userSlice";
 import { useDispatch } from "react-redux";
+import { BG_PHOTO_URL, USER_AVATAR } from "../utils/constants.js";
 
 const Login = () => {
   const [isSignIn, setIsSignIn] = useState("true");
@@ -39,11 +40,17 @@ const Login = () => {
           const user = userCredential.user;
           updateProfile(user, {
             displayName: name.current.value,
+            photoURL: USER_AVATAR,
           })
             .then(() => {
-              const { uid, email, displayName } = auth;
+              const { uid, email, displayName, photoURL } = auth;
               dispatch(
-                addUser({ uid: uid, email: email, displayName: displayName })
+                addUser({
+                  uid: uid,
+                  email: email,
+                  displayName: displayName,
+                  photoURL: photoURL,
+                })
               );
             })
             .catch((error) => {
@@ -86,10 +93,7 @@ const Login = () => {
     <div>
       <Header />
       <div className="absolute">
-        <img
-          src="https://assets.nflxext.com/ffe/siteui/vlv3/b2c3e95b-b7b5-4bb7-a883-f4bfc7472fb7/80a8277e-14eb-4192-83f7-45c27cd0652b/US-en-20240805-POP_SIGNUP_TWO_WEEKS-perspective_WEB_99b9a7c9-7791-4a48-b335-09e8ee246500_medium.jpg"
-          alt="logo"
-        />
+        <img src={BG_PHOTO_URL} alt="logo" />
       </div>
       <form
         onSubmit={(e) => e.preventDefault()}
