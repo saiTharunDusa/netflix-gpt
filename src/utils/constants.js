@@ -15,3 +15,14 @@ export const API_OPTIONS = {
       "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI3NDQxZDhlOGU2MzY1NzkwNGY2MDM0MTNmYjg0MTgzZSIsIm5iZiI6MTcyMzYwOTQ2Mi4xOTg5Niwic3ViIjoiNjZiYzJmY2NhNjYyYjc4ZGFhODI1NjdiIiwic2NvcGVzIjpbImFwaV9yZWFkIl0sInZlcnNpb24iOjF9._8SFNIPmzNBiIf05HuqiIFMSI9MmDv6M9yH7s4kY6x0",
   },
 };
+
+export const POPULAR_API_OPTIONS = {
+  method: "GET",
+  headers: {
+    accept: "application/json",
+    Authorization:
+      "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI3NDQxZDhlOGU2MzY1NzkwNGY2MDM0MTNmYjg0MTgzZSIsIm5iZiI6MTcyMzYwOTQ2Mi4xOTg5Niwic3ViIjoiNjZiYzJmY2NhNjYyYjc4ZGFhODI1NjdiIiwic2NvcGVzIjpbImFwaV9yZWFkIl0sInZlcnNpb24iOjF9._8SFNIPmzNBiIf05HuqiIFMSI9MmDv6M9yH7s4kY6x0",
+  },
+};
+
+export const TMBD_IMG_URL = "https://image.tmdb.org/t/p/w500";
