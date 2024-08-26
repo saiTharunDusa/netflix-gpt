@@ -1,5 +1,5 @@
 const GptSearchBar = () => {
-  return <div>gpt search bar</div>;
+  return <div>gpt search bar!!!</div>;
 };
 
 export default GptSearchBar;
