@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 import React from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Login from "./Login";
@@ -20,26 +20,3 @@ const Body = () => {
 };
 
 export default Body;
-=======
-import React from "react";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Login from "./Login";
-import Browse from "./Browse";
-
-const Body = () => {
-  const appRouter = createBrowserRouter([
-    {
-      path: "/",
-      element: <Login />,
-    },
-    {
-      path: "/browse",
-      element: <Browse />,
-    },
-  ]);
-
-  return <RouterProvider router={appRouter} />;
-};
-
-export default Body;
->>>>>>> a4ac331 (implemented GPT search button)

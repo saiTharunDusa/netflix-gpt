@@ -1,9 +1,4 @@
-<<<<<<< HEAD
+
 # https://www.robotstxt.org/robotstxt.html
 User-agent: *
 Disallow:
-=======
-# https://www.robotstxt.org/robotstxt.html
-User-agent: *
-Disallow:
->>>>>>> a4ac331 (implemented GPT search button)
