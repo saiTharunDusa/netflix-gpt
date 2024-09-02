@@ -13,7 +13,7 @@ export const API_OPTIONS = {
   headers: {
     accept: "application/json",
     Authorization:
-      "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI3NDQxZDhlOGU2MzY1NzkwNGY2MDM0MTNmYjg0MTgzZSIsIm5iZiI6MTcyMzYwOTQ2Mi4xOTg5Niwic3ViIjoiNjZiYzJmY2NhNjYyYjc4ZGFhODI1NjdiIiwic2NvcGVzIjpbImFwaV9yZWFkIl0sInZlcnNpb24iOjF9._8SFNIPmzNBiIf05HuqiIFMSI9MmDv6M9yH7s4kY6x0",
+      "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI3NDQxZDhlOGU2MzY1NzkwNGY2MDM0MTNmYjg0MTgzZSIsIm5iZiI6MTcyMzYwOTQ2Mi4xOTg5Niwic3ViIjoiNjZiYzJmY2NhNjYyYjc4ZGFhODI1NjdiIiwic2NvcGVzIjpbImFwaV9yZWFkIl0sInZlcnNpb24iOjF9._8SFNIPmzNBiIf05HuqiIFMSI9MmDv6M9yH7s4kY6x0" ,
   },
 };
 
@@ -22,7 +22,7 @@ export const POPULAR_API_OPTIONS = {
   headers: {
     accept: "application/json",
     Authorization:
-      "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI3NDQxZDhlOGU2MzY1NzkwNGY2MDM0MTNmYjg0MTgzZSIsIm5iZiI6MTcyMzYwOTQ2Mi4xOTg5Niwic3ViIjoiNjZiYzJmY2NhNjYyYjc4ZGFhODI1NjdiIiwic2NvcGVzIjpbImFwaV9yZWFkIl0sInZlcnNpb24iOjF9._8SFNIPmzNBiIf05HuqiIFMSI9MmDv6M9yH7s4kY6x0",
+      "Bearer " + process.env.REACT_APP_TMBD_KEY,
   },
 };
 
@@ -36,3 +36,5 @@ export const SUPPORTED_LANGUAGES = [
   { identifier: "french", name: "French"},
   { identifier: "telugu", name: "Telugu"}
 ];
+
+export const OPENAI_KEY = process.env.REACT_APP_OPENAI_KEY;
