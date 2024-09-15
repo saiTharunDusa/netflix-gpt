@@ -10,9 +10,11 @@ const Maincontainer = () => {
   const mainMovie = movies[0];
   const { original_title, overview, id } = mainMovie;
   return (
-    <div>
-      <VideoTitle title={original_title} overview={overview} />
-      <VideoBackground movieID={id} />
+    <div > {/* Adjust these values based on your header height */}
+      <div className="relative w-full aspect-video">
+        <VideoTitle title={original_title} overview={overview} />
+        <VideoBackground movieID={id} />
+      </div>
     </div>
   );
 };

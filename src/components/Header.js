@@ -1,4 +1,3 @@
-
 import React, { useEffect } from "react";
 import { signOut } from "firebase/auth";
 import { auth } from "../utils/firebase";
@@ -9,26 +8,26 @@ import { onAuthStateChanged } from "firebase/auth";
 import { LOGO, USER_AVATAR } from "../utils/constants";
 import { toggleGptSearchView } from "../utils/gptSearchSlice";
 import { SUPPORTED_LANGUAGES } from "../utils/constants";
-import {changeLanguage} from "../utils/configSlice";
+import { changeLanguage } from "../utils/configSlice";
 
 const Header = () => {
   const navigate = useNavigate();
   const user = useSelector((store) => store.user);
   const gptSearchView = useSelector((store) => store.gpt.gptSearchView);
   const dispatch = useDispatch();
+
   const handleSignOut = () => {
     signOut(auth)
       .then(() => {})
       .catch((error) => {
-        // An error happened.
         navigate("/error");
       });
   };
+
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
         const { uid, email, displayName, photoURL } = user;
-
         dispatch(
           addUser({
             uid: uid,
@@ -43,7 +42,6 @@ const Header = () => {
         navigate("/");
       }
     });
-    // When the component unmounts, then it unsubscribes the onAuthStateChanged.
     return () => unsubscribe();
   }, []);
 
@@ -56,25 +54,32 @@ const Header = () => {
   }
 
   return (
-    <div className="absolute w-screen z-10 bg-gradient-to-b from-black px-8 py-2 flex justify-between">
-      <img className=" w-52" src={LOGO} alt="logo" />
+    <div className="relative w-full z-10 bg-black px-4 py-2 flex flex-col sm:flex-row sm:justify-between items-center">
+      <img className="w-36 sm:w-52 mb-4 sm:mb-0" src={LOGO} alt="logo" />
       {user && (
-        <div className="flex p-4">
-          {gptSearchView && <select className="p-2 m-2 bg-red-700 text-white rounded-lg" onChange={handleLanguageChange}>
-          {SUPPORTED_LANGUAGES.map((lang) => (
-            <option key = {lang.identifier} value = {lang.identifier}>{lang.name}</option>
-          ))}
-          </select>}
+        <div className="flex flex-col sm:flex-row items-center">
+          {gptSearchView && (
+            <select 
+              className="p-2 m-2 bg-red-700 text-white rounded-lg text-sm sm:text-base w-full sm:w-auto"
+              onChange={handleLanguageChange}
+            >
+              {SUPPORTED_LANGUAGES.map((lang) => (
+                <option key={lang.identifier} value={lang.identifier}>{lang.name}</option>
+              ))}
+            </select>
+          )}
           <button
-            className="p-2 m-2 bg-red-700 text-white rounded-lg"
+            className="p-2 m-2 bg-red-700 text-white rounded-lg text-sm sm:text-base w-full sm:w-auto"
             onClick={handleGPTSearch}
           >
-            {gptSearchView ? "Home"  : "GPT Search"}
+            {gptSearchView ? "Home" : "GPT Search"}
           </button>
-          <img src={USER_AVATAR} className="w-12 h-12" />
-          <button onClick={handleSignOut} className="font-bold text-white">
-            (Sign Out)
-          </button>
+          <div className="flex items-center mt-4 sm:mt-0">
+            <img src={USER_AVATAR} className="w-8 h-8 sm:w-12 sm:h-12 mr-2" alt="User Avatar" />
+            <button onClick={handleSignOut} className="font-bold text-white text-sm sm:text-base">
+              Sign Out
+            </button>
+          </div>
         </div>
       )}
     </div>
