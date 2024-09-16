@@ -5,19 +5,19 @@
 This project is a React application that integrates the power of GPT to personalize the Netflix user experience. It offers features like:
 
 **Features**
-Login/Sign Up
-Sign In /Sign up Form
-redirect to Browse Page
-Browse (after authentication)
-Header
-Main Movie
-Tailer in Background
-Title & Description
-MovieSuggestions
-MovieLists * N
-NetflixGPT
-Search Bar
-Movie Suggestions
+- Login/Sign Up
+- Sign In /Sign up Form
+- redirect to Browse Page
+- Browse (after authentication)
+- Header
+- Main Movie
+- Trailer in Background
+- Title & Description
+- MovieSuggestions
+- MovieLists * N
+- NetflixGPT
+- Search Bar
+- Movie Suggestions
 
 ## Installation
 
