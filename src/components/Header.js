@@ -46,6 +46,8 @@ const Header = () => {
   }, []);
 
   const handleGPTSearch = () => {
+    const taDum = new Audio('/sounds/netflixSound.mp3');
+    taDum.play();
     dispatch(toggleGptSearchView());
   };
 
