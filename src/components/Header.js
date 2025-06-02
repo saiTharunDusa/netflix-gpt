@@ -9,6 +9,7 @@ import { LOGO, USER_AVATAR } from "../utils/constants";
 import { setGptSearchView, toggleGptSearchView } from "../utils/gptSearchSlice";
 import { SUPPORTED_LANGUAGES } from "../utils/constants";
 import { changeLanguage } from "../utils/configSlice";
+import netflixSound from "../assets/netflixSound.mp3";
 
 const Header = () => {
   const navigate = useNavigate();
@@ -46,8 +47,8 @@ const Header = () => {
   }, []);
 
   const handleGPTSearch = () => {
-    const taDum = new Audio('/sounds/netflixSound.mp3');
-    taDum.play();
+    const taDum = new Audio(netflixSound);
+    taDum.play(); 
     dispatch(toggleGptSearchView());
   };
 
